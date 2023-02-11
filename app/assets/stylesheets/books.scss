@@ -1,0 +1,34 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+p{
+  margin:33px;
+}
+.column-name{
+  font-weight:bold;
+}
+th{
+  padding:1px 1px 5px;
+}
+td{
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+h2{
+  font-size:1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+}
+.title,.body,.button{
+  margin:0 0 10px;
+}
+label{
+  display:block;
+}
+.text-field{
+  padding:1px 2px;
+}
+.flash-message{
+  color:#008000;
+}

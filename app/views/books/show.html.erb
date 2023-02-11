@@ -1,0 +1,11 @@
+<div class=box>
+  <div class="flash-message">
+    <%= flash[:notice] %>
+  </div>
+  <h1>Editing Book</h1>
+  <p><span class="column-name">Title:</span><%= @book.title %></p>
+  <p><span class="column-name">Body:</span><%= @book.body %></p>
+  <%= link_to 'Edit',edit_book_path(@book.id) %>
+   | 
+  <%= link_to 'Back',books_url %>
+</div>

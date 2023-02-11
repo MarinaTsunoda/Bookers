@@ -1,0 +1,42 @@
+<div class="box">
+  <div class="index">
+    <h1>Books</h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
+          <td><%= link_to 'Show', book_path(book.id) %></td>
+          <td><%= link_to 'Edit', edit_book_path(book.id) %></td>
+          <td><%= link_to 'Destroy', book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="new">
+    <h2>New book</h2>
+    <% if @book.errors.any? %>
+      <%= @book.errors.count %>errors prohibited this book from being saved:
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <%= form_with model: @book,url:'/books',method: :post do |f| %>
+      <div class="title">
+        <label>Title</label>
+        <%= f.text_field:title %>
+      </div>
+      <div class="body">
+        <label>Body</label>
+        <%= f.text_area:body %>
+      </div>
+      <div  class="button"><%= f.submit'Create Book' %></div>
+    <% end %>
+  </div>
+</div>
